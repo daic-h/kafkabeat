@@ -1,0 +1,21 @@
+################### Kafkabeat Configuration Example #########################
+
+############################# Kafkabeat ############################################
+kafkabeat:
+  # In seconds, defines how often to read server statistics
+  period: 30s
+
+  consumer_group: dummy
+
+  topics: ["dummy"]
+
+  hosts: ["localhost:9200"]
+
+  # jolokia:
+
+  #   hosts: ["localhost:7200"]
+
+  #   proxy:
+  #     url:
+  #     user:
+  #     password:

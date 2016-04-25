@@ -1,0 +1,10 @@
+/.idea
+/build
+
+.DS_Store
+/kafkabeat
+*.pyc
+vendor/*
+*.log*
+tmp
+*.test

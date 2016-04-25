@@ -1,0 +1,13 @@
+package: github.com/daichirata/kafkabeat
+import:
+  - package: github.com/elastic/beats
+    version: 05cd6641cf6e4fa12caa6e85588e181f8eefe1e6
+    subpackages:
+      - libbeat/beat
+      - libbeat/cfgfile
+      - libbeat/common
+      - libbeat/logp
+  - package: github.com/Shopify/sarama
+    version: 4e901c1ab881c4101fcda5160897fc5805d9a89d
+  - package: github.com/stretchr/testify/assert
+    version: c5d7a69bf8a2c9c374798160849c071093e41dd1

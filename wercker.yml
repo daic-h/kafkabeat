@@ -1,0 +1,35 @@
+box: golang:1.6
+
+build:
+  steps:
+    - setup-go-workspace
+
+    - script:
+        name: Show go version
+        code: |
+          go version
+
+    - script:
+        name: Show environment variables
+        code: |
+          env | sort
+
+    - script:
+        name: apt-update/install python-virtualenv
+        code: |
+          apt-get update -qy && apt-get install -qy python-virtualenv
+
+    - script:
+        name: Get the dependencies
+        code: |
+          export GO15VENDOREXPERIMENT=1
+          cd $WERCKER_SOURCE_DIR
+          go version
+          go get github.com/Masterminds/glide
+          export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+          glide install
+
+    - script:
+        name: go test
+        code: |
+            make check -C . testsuite
